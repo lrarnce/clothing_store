@@ -1,11 +1,12 @@
-function ProductsCard(){
+function ProductsCard({product}){
     return(
         <div className="products-main">
             <div className="product-image">
 
             </div>
-            <p className="product-name">Product 1</p> 
-            <p className="product-details">Product Details</p> 
+            <p className="product-id">{product.id}</p> 
+            <p className="product-name">{product.name}</p> 
+            
         </div>
             
        
