@@ -1,17 +1,36 @@
+import { useEffect, useState } from "react"
 import ProductsCard from "../components/ProductsCard"
+import { getAllProducts } from "../services/api"
+
 
 function Home(){
 
-    const products = [
-        {id:1,name:'Shirt'},
-        {id:2,name:'Long Sleeves'},
-        {id:3,name:'Pants'},
-    ]
+    // const products = [
+    //     {id:1,name:'Shirt'},
+    //     {id:2,name:'Long Sleeves'},
+    //     {id:3,name:'Pants'},
+    // ]
+
+    const [products,setProducts] = useState([])
+    const [error,setError] = useState(null)
+
+    useEffect(()=>{
+        const loadProducts = async()=>{
+            try{
+                const getProducts = await getAllProducts()
+                setProducts(getProducts)
+            }
+            catch(err){
+                console.log(err)
+                setError('Failed to load products...')
+            }
+        }
+        loadProducts()
+    },[])
+
 
 
     return(
-
-       
 
         <div>
             This the homepage
