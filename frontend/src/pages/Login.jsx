@@ -15,10 +15,13 @@ function Login(){
             <form action="">
                 <input type="text" name="username" placeholder="username"/>
                 <input type="password" name="password" placeholder="password"/>
-                <p>Forgot Password?</p>
+                
                 <button className="login-btn" type="submit">Login</button>
+                <button className="sign-up-btn" type="submit" onClick={handleClick}>Sign Up</button>
+
+                <p>Forgot Password?</p>
             </form>
-            <button className="sign-up-btn" type="submit" onClick={handleClick}>Sign Up</button>
+            
         </div>
     )
 }

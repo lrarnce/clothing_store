@@ -1,6 +1,7 @@
 const express = require('express');
 const cors = require('cors');
 const productsRoutes = require('./routes/products'); // Import product routes
+const signupRoutes = require('./routes/signup'); // Import signup routes
 
 const app = express();
 
@@ -14,5 +15,6 @@ app.get('/', (req, res) => {
 });
 
 app.use('/products', productsRoutes); // Use product routes
+app.use('/signup', signupRoutes); // Use signup routes
 
 module.exports = app;
