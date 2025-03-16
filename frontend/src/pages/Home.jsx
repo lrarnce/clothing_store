@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import ProductsCard from "../components/ProductsCard"
-import { getAllProducts } from "../services/api"
+import { getAllProducts } from "../services/apiService"
 
 
 function Home(){

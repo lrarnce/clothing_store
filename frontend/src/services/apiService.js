@@ -50,3 +50,22 @@ export const signup = async (formData) => {
   }
   return response.json();
 };
+
+
+//Cart (Work in progress, Currently displays all cart items for all users)
+
+export const getCart = async()=>{
+    try {
+      const response = await fetch (`${BASE_URL}/cart`)
+
+      if(!response.ok){
+        throw new Error(`HTTP error! status: ${response.status}`)
+      }
+
+      const data = await response.json()
+      return data 
+    } catch (error) {
+      console.error('Error fetching products:', error.message)
+      throw error
+    }
+}
